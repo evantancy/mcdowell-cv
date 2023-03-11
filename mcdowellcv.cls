@@ -105,13 +105,13 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
   \def\beforesectionheaderhrulespace{2.85pt}
   \def\sectionheaderhrlueheight{0.518pt}
   \def\aftersectionheaderspace{-5.8pt}
-  
+
   \ifpapersize
     \def\aftersinglelinesubsectionheaderspace{-5.75pt}
   \else
     \def\aftersinglelinesubsectionheaderspace{-20.25pt}
   \fi
-  
+
   \def\afterdoublelinesubsectionheaderspace{-11.75pt}
   \def\aftermultilinesubsectionheaderspace{-7.75pt}
   \def\afteremptysubsectionheaderspace{1.25pt}
@@ -125,7 +125,7 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
   \def\beforesectionheaderhrulespace{3pt}
   \def\sectionheaderhrlueheight{0.5pt}
   \def\aftersectionheaderspace{-4pt}
-  
+
   \ifpapersize
     \def\aftersinglelinesubsectionheaderspace{-4pt}
   \else
@@ -185,7 +185,8 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
 \makeatletter
 \newcommand\makeheader{
   \begin{center}
-    \begin{tabu} to 1\textwidth { X[l,m] X[2,c,m] X[r,m] }
+    % \begin{tabu} to 1\textwidth { X[l,m] X[2,c,m] X[r,m] } <- original
+    \begin{tabu} to 1\textwidth { X[l,m] X[1,c,m] X[r,m] }
       \printaddress & \printname & \printcontacts \\
     \end{tabu}
   \end{center}
