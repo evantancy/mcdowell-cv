@@ -50,12 +50,12 @@
 \LoadClass[\papersize,\mainfontsize]{article}
 
 % Set document margins
-\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry}
+\usepackage[left=0.4in,top=0.4in,right=0.4in,bottom=0.4in]{geometry}
 
 % Set font face
 \usepackage{fontspec}
 \setmainfont[SmallCapsFeatures={Renderer=Basic},
-Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
+  Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
 
 % Remove paragraph indentation
 \usepackage[parfill]{parskip}
@@ -100,7 +100,7 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
 \ifthenelse{\equal{\platformname}{\notwindowsname}}{
   \def\namespaceskip{0.575em}
   \def\afterheaderspace{1.1pt}
-  \def\beforesectionheaderspace{5pt}
+  \def\beforesectionheaderspace{0pt}
   \def\sectionheadermargin{6pt}
   \def\beforesectionheaderhrulespace{2.85pt}
   \def\sectionheaderhrlueheight{0.518pt}
@@ -116,11 +116,11 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
   \def\aftermultilinesubsectionheaderspace{-7.75pt}
   \def\afteremptysubsectionheaderspace{1.25pt}
   \def\subsectionmargin{9pt}
-  \def\aftersubsectionspace{2.1pt}
+  \def\aftersubsectionspace{0pt}
 }{
   \def\namespaceskip{0.4em}
   \def\afterheaderspace{3pt}
-  \def\beforesectionheaderspace{4.75pt}
+  \def\beforesectionheaderspace{0pt}
   \def\sectionheadermargin{6pt}
   \def\beforesectionheaderhrulespace{3pt}
   \def\sectionheaderhrlueheight{0.5pt}
@@ -136,7 +136,7 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
   \def\aftermultilinesubsectionheaderspace{-6pt}
   \def\afteremptysubsectionheaderspace{3pt}
   \def\subsectionmargin{9pt}
-  \def\aftersubsectionspace{4pt}
+  \def\aftersubsectionspace{0pt}
 }
 
 %--------------------------------------------------------------------------------
@@ -161,11 +161,15 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
 \newcommand\name[1]{\def\@name{#1}}
 \name{}
 
+\newcommand\website[1]{\def\@website{#1}}
+\website{}
+
 \newcommand\printname{
   \typeout {kokoko}
   \typeout \spaceskip
   \spaceskip \namespaceskip \relax
   \textbf{\LARGE\textls[110]{\textsc{\@name}}}
+  \small{\@website}
 }
 
 \makeatother
@@ -240,8 +244,8 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
   \togglefalse{centertitledefined}
   \togglefalse{righttitledefined}
   \begin{adjustwidth}{\subsectionmargin}{\subsectionmargin}
-}
-{
+    }
+    {
   \end{adjustwidth}
   \vspace*{\aftersubsectionspace}
 }
